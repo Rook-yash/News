@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuttle News</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-main">
+        <a href="#" class="navbar-icon">
+            <!-- <img src="logo.png" alt="" class="news-icon"> -->
+             <h1>NEWS</h1>
+        </a>
+        <div class="navbar-topics">
+            <p class="navbar-topic" id ="topic1"
+                onclick="
+                selected = 'IPL';
+                apibana('IPL');
+                document.getElementById('topic1').classList.add('blue');
+                colorchange();
+                "
+            >IPL</p>
+            <p class="navbar-topic" id ="topic2"
+                onclick="
+                apibana('Finance');
+                selected = 'Finance';
+                document.getElementById('topic2').classList.add('blue');
+                colorchange();
+                "
+            >Finance</p>
+            <p class="navbar-topic" id ="topic3"
+                onclick="
+                apibana('Politics');
+                selected = 'Politics';
+                document.getElementById('topic3').classList.add('blue');
+                colorchange();
+                "
+            >Politics</p>
+            <p class="navbar-topic" id ="topic4"
+                onclick="
+                apibana('Technology');
+                selected = 'Technology';
+                document.getElementById('topic4').classList.add('blue');
+                colorchange();
+                "
+            >Technology</p>
+        </div>
+        <div class="navbar-search">
+            <input placeholder="e.g. Science" class="navbar-input"
+            onclick="
+                document.querySelector('.navbar-input').value = '';
+            ">
+            <button class="navbar-search-button"
+            onclick="
+            const word = document.querySelector('.navbar-input').value;
+            selected = String(word) ;
+            console.log(selected);
+            colorblue();
+            apibana(word);
+            ">Search</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+    </div>
+    
+    <template class="newscardtemplate" id="newstempid">
+        <div class="news-card">
+            <img src="" alt="" class="news-img">
+            <div class="news-type">
+            <h3 class="news-title"></h3>
+            <h6 class="news-date"></h6>
+            <p class="news-desc"></p>
+            </div>
+        </div>
+    </template>
+
+
+    <script src="news.js" type="module"></script>
+</body>
+</html>
